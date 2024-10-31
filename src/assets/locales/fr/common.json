@@ -1,0 +1,21 @@
+{
+  "toasts": {
+    "history": {
+      "has_been_added": "a été ajouté à votre historique",
+      "type": {
+        "audio": "un audio",
+        "video": "une video",
+        "document": "un document",
+        "lieu": "un lieu",
+        "archive": "une archive"
+      }
+    }
+  },
+  "actions": {
+    "continue_investigation": "Continuer l'enquête",
+    "next": "Suivant",
+    "resume_investigation": "Reprendre l'enquête",
+    "start_investigation": "Commencer l'enquête",
+    "validate": "Valider"
+  }
+}

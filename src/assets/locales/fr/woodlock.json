@@ -1,0 +1,715 @@
+{
+  "woodlock": {
+    "dev": {
+      "reset": "Recommencer"
+    },
+    "pages": {
+      "requests": {
+        "title": "Requêtes"
+      },
+      "history": {
+        "title": "Historique"
+      },
+      "help": {
+        "title": "Aide"
+      }
+    },
+    "help": {
+      "objective": "Objectif"
+    },
+    "characters": {
+      "interrogatory": {
+        "name": "Raphaëlle Sanchez",
+        "role": "Agent de terrain",
+        "action_name": "interrogatoire",
+        "action_title": "Interroger quelqu'un",
+        "question": "Qui souhaitez-vous interroger ?",
+        "error_messages": {
+          "already_answered_in_this_box": "Vous m'avez dejà demandé d'interroger cette personne. Rendez-vous dans l'Historique pour réécouter l'interview.",
+          "already_answered_in_previous_box": "Vous avez déjà interrogé cette personne. Rendez-vous dans l'Historique pour réécouter l'interview.",
+          "empty": "Il me faut l'identité de la personne à interroger",
+          "not_found": "Je n'ai pas pu joindre la personne dont vous me parlez."
+        },
+        "input": {
+          "label": "Prénom et Nom",
+          "placeholder": "François Dupont"
+        }
+      },
+      "exploration": {
+        "name": "Lauren Fraser",
+        "role": "Profileuse",
+        "action_name": "lieu de fouille",
+        "action_title": "Explorer un lieu",
+        "question": "Où souhaitez-vous aller ?",
+        "error_messages": {
+          "already_answered_in_this_box": "Vous m'avez dejà demandé d'explorer ce lieu.",
+          "already_answered_in_previous_box": "Vous avez déjà visité ce lieu lors d'une box précédente. Rendez-vous dans l'Historique pour le visiter de nouveau.",
+          "empty": "On n'a pas le temps d'être indécis. Dîtes moi où aller.",
+          "not_found": "Hmm, cet endroit ne me semble pas pertinent."
+        },
+        "input": {
+          "label": "Adresse, lieu spécifique ou coordonnées GPS",
+          "placeholder": "55 Rue du Faubourg Saint-Honoré, Paris ou 48.862725,2.287592",
+          "place": {
+            "label": "Quel lieu souhaitez-vous fouiller ?",
+            "placeholder": "N° du lieu",
+            "building": "Batiment"
+          },
+          "object": {
+            "label": "Quel objet souhaitez-vous inspecter ?",
+            "placeholder": "Objet",
+            "values": {
+              "1": "Brouette",
+              "2": "Canapé",
+              "3": "Casier",
+              "4": "Cartouche",
+              "5": "Cheminée",
+              "6": "Coffret",
+              "7": "Couteau",
+              "8": "Douche",
+              "9": "Foulard",
+              "10": "Fourchette",
+              "11": "Lavabo",
+              "12": "Lunettes",
+              "13": "Marteau",
+              "14": "Parapluie",
+              "15": "Plante",
+              "16": "Portrait",
+              "17": "Téléviseur",
+              "18": "Tournevis",
+              "19": "Torche"
+            }
+          }
+        }
+      },
+      "archive": {
+        "name": "Jack Ruppert",
+        "role": "Inspecteur",
+        "action_name": "dossier de police",
+        "action_title": "Consulter les archives",
+        "question": "Quel dossier cherchez-vous ?",
+        "error_messages": {
+          "already_answered_in_this_box": "Vous m'avez dejà demandé le dossier cette personne. Rendez-vous dans l'Historique pour le consulter de nouveau.",
+          "already_answered_in_previous_box": "Vous avez déjà demandé le dossier de cette personne lors d'une box précédente. Rendez-vous dans l'Historique pour le consulter de nouveau.",
+          "empty": "Je ne peux pas fouiller les archives sans un nom !",
+          "not_found": "Je ne trouve pas cette personne."
+        },
+        "input": {
+          "label": "Prénom et Nom",
+          "placeholder": "François Dupont"
+        }
+      }
+    },
+    "boxes_choice": {
+      "title": "Niveau d'enquête",
+      "subtitles": {
+        "1": "Bienvenue Détectives,",
+        "2": "Veuillez sélectionner votre niveau d'avancement"
+      },
+      "box_card": {
+        "status": {
+          "done": "Résolue",
+          "open": "À résoudre",
+          "closed": "Bloquée"
+        }
+      }
+    },
+    "modal": {
+      "see_element": "Voir l'élément",
+      "new_request": "Nouvelle requête"
+    },
+    "introduction_modal": {
+      "title": "Introduction",
+      "body": "Pour établir une première liste des suspects, repartez de la scène du crime et déterminez qui a pu accèder au batiment 29 au moment de la mort de Henry Coleman"
+    },
+    "box_1": {
+      "interrogatory": {
+        "caroline_sheridan": {
+          "text": {
+            "1": "Caroline Sheridan avait des choses intéressantes à nous dire. Je vous laisse écouter par vous-même."
+          }
+        },
+        "robert_jackson": {
+          "text": {
+            "1": "Il n'avait rien de plus à nous apprendre que la mère de Henry."
+          }
+        },
+        "greta_jackson": {
+          "text": {
+            "1": "Il n'avait rien de plus à nous apprendre que la mère de Henry."
+          }
+        },
+        "matt_radley": {
+          "text": {
+            "1": "L'interrogatoire de Matt Radley a bien été mené. Je vous l'ai envoyé !"
+          },
+          "errors": {
+            "1": "Il faudrait interroger Caroline Sheridan d'abord !"
+          }
+        },
+        "alix_hatkins": {
+          "text": {
+            "1": "Je viens de vous envoyer le témoignage d'Alix Hatkins."
+          },
+          "errors": {
+            "1": "Il faudrait interroger Caroline Sheridan d'abord !"
+          }
+        },
+        "patrick_obrian": {
+          "text": {
+            "1": "Je vous laisse consulter mon échange avec Patrick O'Brian."
+          }
+        },
+        "jenny_dunn": {
+          "text": {
+            "1": "Je suis allée la voir, voici ce qu'elle a à nous dire."
+          }
+        },
+        "marie_grace": {
+          "text": {
+            "1": "Marie n'était pas chez elle. Mais sa colocataire m'a donné son numéro étudiant: N°339367. Je vous tiendrai au courant lorsque j'aurai pu lui parler !"
+          }
+        },
+        "katrina_mcdouglas": {
+          "text": {
+            "1": "Katrina est en déplacement, impossible de lui parler pour l'instant. Je ressaierai plus tard !"
+          }
+        },
+        "greg_scott": {
+          "text": {
+            "1": "Je suis allé voir Greg Scott, voici la retranscription de son interrogatoire."
+          },
+          "errors": {
+            "1": "Il faudrait interroger Caroline Sheridan d'abord !"
+          }
+        },
+        "arthur_mcdouglas": {
+          "text": {
+            "1": "Je me suis entretenue avec lui, je vous envoie l'enregistrement !"
+          }
+        },
+        "eric_mcdouglas": {
+          "text": {
+            "1": "Le directeur était trop occupé avec la presse pour me recevoir."
+          }
+        },
+        "dane_acosta": {
+          "text": {
+            "1": "Je me suis entretenue avec lui, je vous envoie la retranscription !"
+          }
+        },
+        "lily_ainsworth": {
+          "text": {
+            "1": "Je suis allée la voir, voici ce qu'elle a à nous dire."
+          }
+        },
+        "dave_baker": {
+          "text": {
+            "1": "Je vous laisse consulter mon échange avec Dave Baker."
+          }
+        },
+        "dixon_chase": {
+          "text": {
+            "1": "Je me suis entretenue avec lui, je vous envoie la retranscription !"
+          }
+        },
+        "anita_davis": {
+          "text": {
+            "1": "Je suis allée la voir, voici ce qu'elle a à nous dire."
+          }
+        },
+        "logan_hayden": {
+          "text": {
+            "1": "Je vous laisse consulter mon échange avec Logan Hayden."
+          }
+        },
+        "lizzy_hobbs": {
+          "text": {
+            "1": "Je me suis entretenue avec elle, je vous envoie la retranscription !"
+          }
+        },
+        "maria_joyner": {
+          "text": {
+            "1": "Je suis allée la voir, voici ce qu'elle a à nous dire."
+          }
+        },
+        "mary_lane": {
+          "text": {
+            "1": "Je vous laisse consulter mon échange avec Mary Lane."
+          }
+        },
+        "isabel_milton": {
+          "text": {
+            "1": "Je me suis entretenue avec elle, je vous envoie la retranscription !"
+          }
+        },
+        "alix_park": {
+          "text": {
+            "1": "Je suis allée la voir, voici ce qu'elle a à nous dire."
+          }
+        },
+        "layla_patton": {
+          "text": {
+            "1": "Je vous laisse consulter mon échange avec Layla Patton."
+          }
+        },
+        "bentley_pratt": {
+          "text": {
+            "1": "Je me suis entretenue avec lui, je vous envoie la retranscription !"
+          }
+        },
+        "mario_rubio": {
+          "text": {
+            "1": "Je suis allée le voir, voici ce qu'il a à nous dire."
+          }
+        },
+        "ruby_skeates": {
+          "text": {
+            "1": "Je vous laisse consulter mon échange avec Ruby Skeates."
+          }
+        },
+        "amir_sutton": {
+          "text": {
+            "1": "Je me suis entretenue avec lui, je vous envoie la retranscription !"
+          }
+        },
+        "chloe_quinn": {
+          "text": {
+            "1": "Elle a bien passé la soirée avec Ruby Skeates mais elle n'avait rien d'autre à nous apprendre."
+          }
+        },
+        "kim_jeanes": {
+          "text": {
+            "1": "Elle a bien passé la soirée avec Ruby Skeates mais elle n'avait rien d'autre à nous apprendre."
+          }
+        },
+        "emily_dalton": {
+          "text": {
+            "1": "Elle a bien passé la soirée avec Isabel Milton mais elle n'avait rien d'autre à nous apprendre."
+          }
+        },
+        "frank_dwelling": {
+          "text": {
+            "1": "Elle a bien passé la soirée avec Isabel Milton mais elle n'avait rien d'autre à nous apprendre."
+          }
+        },
+        "alina_kong": {
+          "text": {
+            "1": "Elle a bien passé la soirée avec Isabel Milton mais elle n'avait rien d'autre à nous apprendre."
+          }
+        },
+        "viola_knowles": {
+          "text": {
+            "1": "Elle a bien passé la soirée avec Isabel Milton mais elle n'avait rien d'autre à nous apprendre."
+          }
+        },
+        "anna_czjaviwck": {
+          "text": {
+            "1": "Elle a bien passé la soirée avec Isabel Milton mais elle n'avait rien d'autre à nous apprendre."
+          }
+        }
+      },
+      "exploration": {
+        "2_portrait": {
+          "portrait": "Portrait",
+          "success_text": "Voilà le résultat de la fouille qu'on a menée. En espérant que ça vous aide !"
+        },
+        "7_portrait": {
+          "portrait": "Portrait",
+          "success_text": "Bravo détective, j'ai bien trouvé quelque chose à l'endroit demandé !"
+        },
+        "29_chimney": {
+          "chimney": "Cheminée",
+          "success_text": "On va aller voir ça !"
+        },
+        "14_locker": {
+          "locker": "Casier",
+          "success_text": "Regardez ce que j'ai trouvé détective !"
+        }
+      },
+      "hints": {
+        "find_badge_owner": {
+          "title": "Trouvez les propriétaires des badges",
+          "hints": {
+            "1": "Commençons par interroger la petite amie de la victime.",
+            "2": "Avez-vous réussi à assembler le document découpé ?",
+            "3": "Interrogeons le fameux \"Matt\" mentionné au dos du flyer, ce doit être un proche de la victime.",
+            "4": "Alix, la colocataire de la victime, devrait avoir des choses intéressantes à nous dire !",
+            "5": "Pour pouvoir interroger ce \"Greg\", il nous faut son nom complet. Avez-vous visité le site web de l'école ?",
+            "6": "Avez-vous interrogé les étudiants de la famille McDouglas ?",
+            "7": "Prêtez bien attention aux fautes que l'on peut faire quand on recopie plusieurs noms.",
+            "8": "Si nous reprenons tous les éléments nous avons Greg Scott, Katrina McDouglas, Arthur McDouglas, Alix Hatkins, Marie Grace, Henry Coleman, Caroline Sheridan, Matt Radley !"
+          }
+        },
+        "find_secret_society_headquarters": {
+          "title": "Localisez le QG de la société secrète",
+          "hints": {
+            "1": "Si Charles Woodlock a mis en place une \"quête\" pour rejoindre la Société secrète (SCC), sa statue devrait en être le point de départ.",
+            "2": "La statue parle de sciences, histoire et littérature. Il y a des bâtiments qui correspondent de chaque côté de la statue. Il doit y avoir quelque chose à trouver...",
+            "3": "Caroline a évoqué l'obsession d'Henry pour les portraits de Charles Woodlock. C'est sûrement ça qu'il faut chercher !",
+            "4": "Ces symboles derrière les portraits, internet devrait vous aider à les déchiffrer. La Gazette mentionne notamment l'ordre des templiers… Peut-être que nous pouvons traduire ces symboles en lettres !",
+            "5": "Ce site peut vous aider: https://www.dcode.fr/chiffre-templiers",
+            "6": "On a obtenu “YVSPTBGO ZS BREFG OHSAHYH”, une double traduction, à coup sûr. La table de Vigenère devrait vous aider.",
+            "7": "Il vous faut trouver un mot clé pour utiliser cette table de Vigenère.",
+            "8": "N'oubliez pas votre stylo UV !",
+            "9": "Henry a réussi la traduction avec le mot clé \"Woodlock\".",
+            "10": "Si l'on se base sur l'écriture de Henry, voici comment il a procédé : on prend la première lettre du mot clé (W) qu'on recherche dans la première colonne du tableau. Arrivé à cette case, on défile sur la ligne correspondante et l'on s'arrête lorsqu'on atteint la première lettre du message codé (Y). Enfin, à partir de cette case, on remonte jusqu'à la ligne supérieure du tableau. Ici, c'est un (C)…",
+            "11": "On recommence ensuite avec la deuxième lettre du mot clé \"Woodlock\" (O), on poursuit la ligne correspondant jusqu'à ce qu'on arrive sur la case de la deuxième lettre du message codé (V), et à partir de cette case, on remonte la colonne jusqu'en haut du tableau, ce qui donne un (H)…",
+            "12": "Si vous rencontrez des difficultés à faire la traduction, le site web https://www.dcode.fr/chiffre-vigenere vous aidera.",
+            "13": "Dès que vous êtes arrivé au bout du mot clé \"Woodlock\", reprenez avec la première lettre de celui-ci.",
+            "14": "En poursuivant la traduction, “YVSPTBGO” donne \"Cheminée\" !",
+            "15": "“ZS BREFG OH SAHYH” donne “De notre élément”, nous devons chercher la \"Cheminée de notre élément\" !",
+            "16": "“De notre élément”… Ca ne vous fait pas penser à la table périodique des éléments ?",
+            "17": "Avez-vous trouvé le numéro associé au Cuivre, l'emblème de la société secrète ?",
+            "18": "On cherche donc le numéro 29 ! Allons donc examiner cette cheminée du bâtiment 29 !"
+          }
+        },
+        "find_secret_society_key": {
+          "title": "Trouvez la clé de la société secrète",
+          "hints": {
+            "1": "Avez-vous reçu la photo de la salle de réunion de la société secrète dans votre boîte de réception ?",
+            "2": "Que remarquez-vous sur le mur du fond ? A quoi peut bien faire référence ce mot ?",
+            "3": "Ce doit être le mot de passe pour accéder à la page de la SCC. Avez-vous cherché sur le site web de l'école ?",
+            "4": "De quelle origine est Charles Woodlock ? Ça a peut-être un lien avec le message inscrit au dos du flyer déchiré.",
+            "5": "Il faut cliquer sur le drapeau de Chypre pour avoir accès à la page de la SCC.",
+            "6": "La clé de Henry : elle protège son \"pleige\" ! Allons ouvrir le casier en question pour voir quel est le secret qui le liait à la SCC.",
+            "7": "Avez-vous trouvé dans quel bâtiment sont stockés les casiers des Cuivrés ?",
+            "8": "Prêtez bien attention à l'histoire de Charles Woodlock.",
+            "9": "Vous pouvez retrouver le **casier** d'Henry au Domaine De Vinci, **le bâtiment 14**."
+          }
+        },
+        "find_secret_society_suspects": {
+          "title": "Trouvez les suspects de la société secrète",
+          "hints": {
+            "1": "L'annonce du journal sur l'ICOE donne un alibi à l'un de nos suspects.",
+            "2": "Comparez l'encart sur la page de la SCC avec la rubrique dans la Gazette.",
+            "3": "Vous pouvez donc évincer Katrina de la liste des suspects, qui était à Dublin pour la conférence de l'ICOE le jour du meurtre.",
+            "4": "En reprenant la liste des badges et en enlevant Katrina et Henry, il vous reste 6 suspects : Alix Hatkins, Arthur McDouglas, Caroline Sheridan, Greg Scott, Marie Grace et Matt Radley."
+          }
+        }
+      },
+      "objectives": {
+        "find_badge_owner": {
+          "title": "Trouvez les propriétaires des badges",
+          "subtitle": "Retrouvez les propriétaires des badges enregistrés par le système de sécurité du Bâtiment 29.",
+          "detail": {
+            "1": "Retrouvez les propriétaires des badges enregistrés par le système de sécurité du Bâtiment 29."
+          },
+          "error_message": "Vous êtes sûrs ? Je ne trouve pas la même chose que vous... Avez-vous bien complété votre Detective Board ?",
+          "success_message": "Maintenant qu'on a établi une première liste des suspects, concentrez-vous sur ce groupe secret et tentez de trouver des preuves de son existence."
+        },
+        "find_secret_society_headquarters": {
+          "title": "Localisez le QG de la société secrète",
+          "subtitle": "Trouvez où se réunit la société secrète du Cercle de Cuivre.",
+          "detail": {
+            "1": "Une seule manière de savoir si cette société du Cercle de Cuivre existe ou non : trouvez où ils se réunissent !"
+          },
+          "answer": {
+            "2": "Cheminée"
+          },
+          "errors": {
+            "1": "Qu'est-ce qui vous fait dire ça ? Vous êtes allé vérifier ?"
+          },
+          "success_message": "On a la preuve que la société du Cercle de Cuivre existe mais est-ce que ce groupe a un lien avec la mort de Henry ? Est-ce qu'il en faisait partie ? Et d'ailleurs, on a retrouvé une clé sur lui. On a eu des réponses très vagues des étudiants à ce sujet. Essayez de comprendre son utilité, elle a peut-être un rapport avec cette société secrète."
+        },
+        "find_secret_society_key": {
+          "title": "Découvrez l'utilité de la clé",
+          "subtitle": "Trouvez ce que la clé que portait Henry autour du cou ouvre. C'est forcément important !",
+          "detail": {
+            "1": "Nos experts ne reconnaissent pas la clé qu'Henry portait autour du cou. C'est trop étrange pour ne pas être important : trouvez ce qu'elle ouvre !"
+          },
+          "answer": {
+            "2": "Casier"
+          },
+          "errors": {
+            "1": "Qu'est-ce qui vous fait dire ça ? Vous êtes allé vérifier ?"
+          },
+          "success_message": "C'est donc ça ! La clé que portait Henry ouvre un casier dans le bâtiment 14. Il contenait seulement une enveloppe, je la ramène au bureau et vous l'envoie dans votre prochaine box. Vous avez bien avancé, agent ! Vous pouvez maintenant dresser une première liste des suspects."
+        },
+        "validate_suspects": {
+          "title": "Validez vos suspects",
+          "subtitle": "Utilisez vos déductions pour valider les suspects.",
+          "error_message": "Votre liste de suspects est incorrecte.",
+          "success_message": "Bravo, Détective ! J'ai parcouru les éléments que vous nous avez communiqués, et je dois dire que vous avez accompli un excellent travail. Je continue d'assembler un maximum d'indices sur place, je vous les envoie au plus vite. À bientôt pour la suite de l'enquête !"
+        }
+      }
+    },
+    "box_2": {
+      "objectives": {
+        "find_suspects_link": {
+          "title": "Reconstituez les évènements du lundi 15 octobre",
+          "subtitle": "Le lundi 15 octobre, Caroline aurait reçu un mot anonyme l'informant d'un rendez-vous que Henry avait au bâtiment 29. Identifiez la personne avec laquelle Henry avait initialement rendez-vous, ainsi que le pseudonyme du membre du Cercle de Cuivre accusé d'avoir écrit le mot anonyme.",
+          "answers": {
+            "expected_person": "Personne attendue",
+            "author_pseudonym": "Pseudonyme de l'auteur"
+          },
+          "errors": {
+            "default": "Je ne vois pas ce qui vous permet d'affirmer ça avec certitude...",
+            "forgot_karim": "Allez l'interroger avant de tirer des conclusions hâtives !"
+          },
+          "success_message": "Si je résume, le pleige de Henry donc le secret qu'il a partagé avec le Cercle de Cuivre est une relation adultère avec Mari K ou plutôt Karim Collins. Et quelqu'un a révélé cette relation à Caroline, la petite amie de Henry. Pour le moment nous ne savons pas qui est l'auteur du mot anonyme mais vous avez découvert que cette personne est aussi membre de la société secrète, sous le pseudonyme Armstrong."
+        },
+        "find_congratulation_author": {
+          "title": "Trouvez l'auteur du mot de félicitations",
+          "subtitle": "Identifiez l'auteur du mot de félicitations trouvé dans le sac de Henry.",
+          "answers": {
+            "message_author": "Auteur du mot"
+          },
+          "errors": {
+            "default": "JJe n'arrive pas à cette conclusion de mon côté.",
+            "forgot_thomas": "Allez l'interroger avant de tirer des conclusions hâtives !"
+          },
+          "success_message": "Thomas Young est donc le père de Henry. Il lui a demandé de venir à son bureau pour lui offrir une montre pour le féliciter de son admission au stage de la Maison Blanche. On comprend mieux maintenant pourquoi il tenait tant à venir étudier à Woodlock."
+        },
+        "find_weapon": {
+          "title": "Retrouvez l'arme du crime",
+          "subtitle": "L'arme du crime pourrait nous apporter beaucoup d'informations utiles. Nous comptons sur vous pour la retrouver.",
+          "answers": {
+            "building_number": "N° du bâtiment où l'arme a été retrouvée",
+            "serial_number": "N° de série"
+          },
+          "errors": {
+            "default": "Qu'est-ce qui vous fait dire ça ? Vous êtes allé vérifier ?"
+          },
+          "success_message": "Le meurtrier a donc jeté l'arme du crime dans le Lac Pelosi et Caroline en a été témoin. Je vous envoie une photo du couteau dans votre prochaine box, j'espère que vous pourrez en tirer des informations."
+        },
+        "validate_suspects": {
+          "title": "Validez vos suspects",
+          "subtitle": "Avec tous ces nouveaux éléments dans l'enquête, vous pouvez maintenant mettre à jour votre liste de suspects.",
+          "errors": {
+            "default": "Votre liste de suspects est incorrecte.",
+            "with_arthur_or_marie": "Avez-vous bien fait attention aux membres du Cercle de Cuivre présents à leur réunion d'urgence ?",
+            "with_caroline": "Avec les derniers éléments découverts, je pense que nous pouvons enlever un étudiant de la liste des suspects.",
+            "forgot_alix_greg_karim_matt": "Votre liste de suspects est incomplète."
+          },
+          "success_message": "Encore du beau travail, Détective ! La liste des suspects s'affine et nous pourrons bientôt, je l'espère, mettre le coupable derrière les barreaux. Je vous envoie les derniers éléments de l'enquête dans votre prochaine box. A bientôt pour la suite de l'enquête !"
+        }
+      },
+      "hints": {
+        "expected_person": {
+          "title": "Identifiez la personne attendue le lundi 15 octobre",
+          "hints": {
+            "1": "Cette carte postale, ne peut-on pas retracer de quelle ville elle provient ?",
+            "2": "Le logo sur le mur, le sticker sur la voiture, la plaque d'immatriculation et la tour en arrière plan donnent des indications sur le lieu d'origine de la carte postale. N'hésitez pas à faire des recherches internet.",
+            "3": "Ce sont bien un sticker et une plaque d'immatriculation du Texas, le logo des Cowboys, la célèbre équipe de football et la Reunion Tower de... Dallas !",
+            "4": "Le Yearbook nous donne la ville d'origine des étudiants... Cherchons ceux qui peuvent coller !",
+            "5": "En effet c'était bien Karim Collins la personne attendue !"
+          }
+        },
+        "find_anonymous_pseudonym": {
+          "title": "Trouvez le pseudonyme de l'auteur \"Anonyme\"",
+          "hints": {
+            "1": "A chaque réunion de la SCC, les membres présents signent l'ordre du jour. Ça peut nous aider !",
+            "2": "Rien d'évident sur les signatures de la réunion d'urgence. Qu'en est-il de la réunion précédente ? Celle trouvée sur la page secrète de la SCC sur le site Woodlock !",
+            "3": "Le A ne vous semble pas familier dans la façon dont il est écrit ?",
+            "4": "L'auteur du mot est bien Armstrong."
+          }
+        },
+        "find_congratulation_author": {
+          "title": "Trouvez l'auteur du mot de félicitations",
+          "hints": {
+            "1": "Trouvez là où Henry cache ses codes !",
+            "2": "Vous avez regardé dans le stylo Woodlock ? Dévissez-le ! Il est souvent bien caché, même coincé, et collé à la paroi du tube blanc dans la partie avant du stylo !",
+            "3": "Il est introuvable dans le stylo ? On a retrouvé le papier qui devait y être caché : [photo] .",
+            "4": "Bizarre tous ces carrés de couleur, est-ce qu'il y a quelque chose qui pourrait vous aider dans les affaires de Henri ?",
+            "5": "Avez-vous pensé à la chemise rouge qui contient son emploi du temps ?",
+            "6": "En la superposant avec le message, on peut lire 4537.",
+            "7": "L'un des messages vocaux a été laissé par un certain Tom, comme le \"T.\" du mot de félicitations.",
+            "8": "Avez-vous fait attention à la tonalité de la voix du message ? On dirait bien qu'il s'agit d'un adulte qui voulait féliciter Henry.",
+            "9": "Peut-être que Tom est un surnom ? Pour Thomas par exemple !",
+            "10": "Deux professeurs s'appellent Thomas, avez-vous retracé les pas de Henry sur sa dernière journée ?",
+            "11": "Il a utilisé son badge au bâtiment M6. Quel professeur a son bureau dans ce bâtiment ?",
+            "12": "Le mot semble avoir été écrit par Thomas Young. Allez l'interroger pour confirmer cela."
+          }
+        },
+        "find_weapon": {
+          "title": "Retrouvez l'arme du crime",
+          "hints": {
+            "1": "Dans son message vocal, on entend que Caroline aperçoit un individu qui semble suspect.",
+            "2": "Madame Makawi pourra nous dire où elle a croisé Caroline. Partons de là pour retracer ses pas.",
+            "3": "Avez-vous regardé où est le bureau de Madame Makawi ?",
+            "4": "Faites bien attention aux bruits environnants dans le message de Caroline.",
+            "5": "Elle semble avoir croisé l'individu vers une source d'eau et une route.",
+            "6": "Il ne peut s'agir que du lac Pelosi qui est proche du bureau de Madame Makawi et de la route.",
+            "7": "Raphaëlle Sanchez peut certainement vous aider à fouiller le Lac Pelosi.",
+            "8": "Il faut aller inspecter les couteaux au Lac Pelosi, numéro 27 sur le plan.",
+            "9": "Avez-vous bien fait attention aux photos de la scène de crime ?",
+            "10": "Le ou la coupable a fait une erreur en taguant la scène du crime: on y voit la forme reconnaissable du couteau utilisé.",
+            "11": "Comparez la marque laissée sur la scène de crime avec les couteaux retrouvés au fond du lac, la photo est dans votre boîte de réception.",
+            "12": "En faisant la concordance avec la marque, il s'agit bien du couteau 8953."
+          }
+        },
+        "validate_suspects": {
+          "title": "Validez vos suspects",
+          "hints": {
+            "1": "Nous connaissons le nombre de passages de chaque suspect au batiment 29. En vérifiant les motifs de certains passages, vous pourriez éliminer des suspects.",
+            "2": "Grâce à sa déposition, nous savons que Caroline était au bâtiment 29 le lundi 15. Par déduction... elle n'a pas pu y être une seconde fois le soir du crime.",
+            "3": "Rien ne vérifie les dires de Karim. Il était le dernier à voir le corps, ce qui fait de lui un nouveau suspect !",
+            "4": "Avez-vous vérifié qui était présent lors de la réunion du Cercle de Cuivre la veille du meurtre ?",
+            "5": "La signature de Marie Grace... ne vous semble-t-elle pas familière ?",
+            "6": "En comparant sa signature sur sa déposition avec celles des membres de la SCC, Marie ne peut être qu'Artémis.",
+            "7": "Le numéro de téléphone qu'avait Henry, l'avez-vous appelé ?",
+            "8": "Pourquoi appeler le service des fraudes avant sa mort ? Vérifiez avec Jack s'ils ont gardé une trace de l'appel.",
+            "9": "En lisant le dossier de police à propos d'une fraude datant de 2012, Arthur semble vouer un culte à Reagan.",
+            "10": "Arthur a donc un motif de passage autre que le meurtre de Henry. ",
+            "11": "Il nous reste donc 4 personnes sur la liste des suspects ! On ne peut toujours pas innocenter Alix Hatkins, Greg Scott, Matt Radley et Karim Collins."
+          }
+        }
+      },
+      "interrogatory": {
+        "karim_collins": {
+          "text": {
+            "1": "Karim Collins avait des choses intéressantes à nous dire. Je vous laisse écouter par vous-même."
+          }
+        },
+        "thomas_allen": {
+          "text": {
+            "1": "L'interrogatoire de Thomas Allen a bien été mené, je vous l'ai envoyé !"
+          }
+        },
+        "tom_grant": {
+          "text": {
+            "1": "Je viens de vous envoyer l'interrogatoire de Tom Grant."
+          }
+        },
+        "tom_bourne": {
+          "text": {
+            "1": "Je lui ai posé quelques questions, ce n'est pas le \"Tom\" que nous cherchons."
+          }
+        },
+        "tom_fox": {
+          "text": {
+            "1": "Je l'ai interrogé, il n'a aucun lien avec Henry."
+          }
+        },
+        "thomas_sanders": {
+          "text": {
+            "1": "Je lui ai posé quelques questions, ce n'est pas le \"Tom\" que nous cherchons."
+          }
+        },
+        "thomas_young": {
+          "text": {
+            "1": "Je suis allée le voir, voici ce qu'il a à nous dire."
+          }
+        },
+        "sonya_makawi": {
+          "text": {
+            "1": "J'espère que l'interrogatoire de Sonya Makawi vous aidera !"
+          }
+        },
+        "ellen_carter": {
+          "text": {
+            "1": "Elle m'a confirmé qu'elle a bien aidé Thomas Young à l'organisation de la diffusion du débat présidentiel."
+          }
+        },
+        "mary_lopez": {
+          "text": {
+            "1": "Je l'ai interrogée, elle n'a aucun lien avec Henry."
+          }
+        }
+      },
+      "exploration": {
+        "27_knife": {
+          "knife": "Couteau",
+          "success_text": "Ok je vais envoyer une équipe sur place, je vous transmets ce qu'on trouve !"
+        }
+      },
+      "archive": {
+        "2012_fraud_1": {
+          "fraud": "Fraude",
+          "success_text": "Voilà ce que j'ai trouvé dans les archives !"
+        },
+        "2012_fraud_2": {
+          "fraud": "Fraude",
+          "success_text": "J'ai trouvé un dossier correspondant à votre recherche. Je vous laisse voir si ça vous intéresse."
+        },
+        "2012_death": {
+          "death": "Décès",
+          "error_text": "On n'a rien dans les archives répondant à ces critères là."
+        },
+        "2012_theft": {
+          "theft": "Vol",
+          "success_text": "Je vous laisse consulter ce que j'ai trouvé, en espérant que ça vous avance."
+        },
+        "2012_assault": {
+          "assault": "Assaut",
+          "success_text": "Voici ce que j'ai trouvé, j'espère que ça vous sera utile."
+        },
+        "2012_disappearance": {
+          "disappearance": "Disparition",
+          "success_text": "Une affaire assez banale, je vous transmets le rapport quand même."
+        }
+      }
+    },
+    "box_3": {
+      "hints": {
+        "find_murderer_profile": {
+          "title": "Détaillez le profil du meurtrier",
+          "hints": {
+            "1": "Le logo figurant sur l'arme du crime est le même que celui sur le flyer de secourisme. Interrogeons l'organisateur de l'événement.",
+            "2": "Selon Maxwell Taylor, le cours de secourisme était réservé aux 2ème années.",
+            "3": "Si seuls les 2ème années ont pu avoir accès à l'arme du crime, le meurtrier est forcément en 2ème année.",
+            "4": "Cela nous permet d'éliminer un suspect qui est en 3ème année : Greg Scott !",
+            "5": "La disposition des objets sur un bureau nous permet généralement de déterminer si une personne est droitière ou gauchère.",
+            "6": "Pour savoir si le meurtre a été commis par une personne droitière ou gauchère, analysez à nouveau le rapport d'autopsie.",
+            "7": "Le rapport d'autopsie nous indique clairement que le meurtre a été commis par une personne droitière.",
+            "8": "D'après les photos des bureaux, Karim est la seule personne gauchère. Vous pouvez donc l'éliminer de la liste des suspects."
+          }
+        },
+        "find_who_killed_henry": {
+          "title": "Trouvez qui a tué Henry Coleman",
+          "hints": {
+            "1": "Souvenez-vous : Karim dit s'être fait voler ses vêtements après son match avec les Wildcats. Cette chaussette doit être la sienne !",
+            "2": "Comment se fait-il que cette chaussette se retrouve sous le lit d'Alix ? Un lien avec les traces de chaussures, sûrement.",
+            "3": "Appuyez-vous sur la forme de la semelle pour trouver le modèle de chaussure correspondant. A ne pas confondre avec la forme du carrelage !",
+            "4": "Il s'agit bien de Nike Air Force 1, trouvons qui en possède !",
+            "5": "Je ne vois pas de correspondances entre les traces de pas et les modèles des chaussures appartenant à Henry et Alix...",
+            "6": "Concentrons-nous maintenant sur les mots croisés.",
+            "7": "Mot 1 : S'il s'agit d'en savoir plus sur une disparition, Jack peut vous obtenir le dossier de police correspondant.",
+            "8": "Mot 1 : Avez-vous regardé la date de parution du premier numéro de la gazette ?",
+            "9": "Mot 1 : Un dossier de police de 1982 devrait vous aider...",
+            "10": "Mot 1 : Il s'agit bien de KHAN-LEVIN.",
+            "11": "Mot 2 : Ça peut parfois être compliqué de vivre en colocation.",
+            "12": "Mot 3: Rappelez-vous sur quel drapeau vous avez cliqué sur le site Woodlock.",
+            "13": "Mot 4: A en croire leur page secrète, le directeur aurait choisi une référence littéraire comme pseudonyme pour la SCC, simple coïncidence ?",
+            "14": "Mot 5: Ne serait-ce pas une référence à Harry Potter ?",
+            "15": "Mot 6 : D'après la carte du campus, il ne peut s'agir que de la pelouse du Sigismond !",
+            "16": "Mot 7 : Des plaques rouges? Henry avait peut-être des allergies, il faudrait voir quels aliments lui étaient proscrits.",
+            "17": "Mot 7: Il a certainement consulté l'infirmière à l'époque.",
+            "18": "Mot 7 : Bridget O'Hara nous parle de xylitol, contenu dans les chewing-gums.",
+            "19": "Les mots croisés nous donnent donc le pseudo Karo Cherry-Damn. Cherchez sur internet, on pourrait trouver des infos intéressantes sur son profil.",
+            "20": "Avez-vous consulter la liste d'amis de Karo Cherry-Damn ?",
+            "21": "On trouve plusieurs informations précieuses sur le Facebook de Matt !",
+            "22": "La photo de son père... elle ne vous dit rien ?",
+            "23": "On retrouve la même sur l'article du Milton hebdo avec une flèche qui le relie au verso du flyer de secourisme, qu'est-ce que vous pouvez en déduire ?",
+            "24": "Et regardez les chaussures de Matt sur sa photo de profil, voilà une information utile !",
+            "25": "Maintenant qu'on sait que Henry était allergique aux chewing-gums, vous ne trouvez pas ça bizarre qu'on a retrouvé un emballage dans ses affaires? A qui appartient le numéro noté dessus, vous avez essayé d'appeler ?",
+            "26": "Il s'agit donc du numéro du commissariat de Woodlock. Vous avez pensé à consulter les dossiers de police du service des fraudes ?",
+            "27": "La bande audio de l'appel à la police révèle des bruits de mastication. Un chewing-gum, on dirait !",
+            "28": "Quelqu'un se serait-il fait passer pour la victime en appelant la police ?",
+            "29": "Nous avons maintenant plusieurs éléments qui convergent dans la même direction : Matt Radley. Est-ce qu'on a suffisamment de preuves pour l'inculper ?"
+          }
+        }
+      },
+      "objectives": {
+        "find_murderer_profile": {
+          "title": "Détaillez le profil du meurtrier",
+          "subtitle": "Trouvez ces éléments sur le meurtrier afin d'affiner notre liste de suspects.",
+          "errors": {
+            "default": "Je n'arrive pas à cette conclusion de mon côté.",
+            "forgot_maxwell": "Qu'est-ce qui vous fait dire ça ? Trouvez des preuves avant de tirer des conclusions hâtives !"
+          },
+          "success_message": "Le meurtrier est donc droitier et en deuxième année. Est-ce que ces indices ne nous permettraient pas d'affiner encore notre liste de suspects ? Une question subsiste quand même : quel serait le mobile ? Savoir pourquoi Henry a été assassiné nous donnera sans doute le nom de son meurtrier."
+        },
+        "find_who_killed_henry": {
+          "title": "Trouvez qui a tué Henry Coleman",
+          "subtitle": "Avant de clore l'enquête, assurez-vous d'avoir obtenu les réponses à ces questions : - Quel est le motif du meurtre ? - Pour quelle raison le message codé a-t-il été laissé près du corps ? - Qui a donné le mot anonyme à Caroline ? Pourquoi? - Quels sont les éléments qui prouvent l'innocence des autres suspects ?",
+          "errors": {
+            "default": "Je ne vois pas ce qui vous permet d'affirmer ça avec certitude…"
+          },
+          "success_message": "Si vous pensez qu'on a suffisamment de preuves qui l'accusent, retournons l'interroger pour voir ce qu'il a à nous dire."
+        }
+      }
+    }
+  }
+}
