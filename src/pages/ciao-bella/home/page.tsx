@@ -1,17 +1,17 @@
-import Card from './card';
-import * as React from 'react';
-import * as analytics from '@/utils/analytics';
-import { useSearchParams } from 'react-router-dom';
-import { Transition } from '@headlessui/react';
-import { cn } from '@/utils/cn';
-import Carousel, { CarouselContext } from '@/components/carousel';
-import { Icon } from '@iconify-icon/react';
-import { localStorageKeys } from '@/constants/local-storage';
-import Agent from './agent';
-import { TeamMember } from '@/types/team-member';
+import Card from "./card";
+import * as React from "react";
+import * as analytics from "@/utils/analytics";
+import { useSearchParams } from "react-router-dom";
+import { Transition } from "@headlessui/react";
+import { cn } from "@/utils/cn";
+import Carousel, { CarouselContext } from "@/components/carousel";
+import { Icon } from "@iconify-icon/react";
+import { localStorageKeys } from "@/constants/local-storage";
+import Agent from "./agent";
+import { TeamMember } from "@/types/team-member";
 
-import useMachine from '@/machine/ciao-bella/use-machine';
-import CHARACTERS from '@/data/ciao-bella/characters';
+import useMachine from "@/machine/ciao-bella/use-machine";
+import CHARACTERS from "@/data/ciao-bella/characters";
 
 const CarouselSlide = ({
   children,
@@ -37,10 +37,10 @@ const CarouselSlide = ({
     >
       <div
         className={cn(
-          'transform transition',
+          "transform transition",
           emblaApi?.selectedIndex === index
-            ? '[&>*]:grayscale-0'
-            : '!scale-75 [&>*]:grayscale opacity-50',
+            ? "[&>*]:grayscale-0"
+            : "!scale-75 [&>*]:grayscale opacity-50",
           className
         )}
       >
@@ -50,21 +50,26 @@ const CarouselSlide = ({
   );
 };
 
-type CharacterName = (typeof CHARACTERS)[number]['id'];
+type CharacterName = (typeof CHARACTERS)[number]["id"];
 
 function Home() {
   const { snapshot, send } = useMachine();
   const [searchParams, setSearchParams] = useSearchParams();
-  const characterDisplayed = searchParams.get('character') as CharacterName | null;
+  const characterDisplayed = searchParams.get(
+    "character"
+  ) as CharacterName | null;
 
   const trackCardAction = (character: TeamMember) => () => {
     analytics.track({
-      event: 'click_request',
+      event: "click_request",
       action_name: character.trackingId,
       box_number: `1`,
     });
 
-    send({ type: `CHARACTER_REQUEST_OPEN`, character: character.id as CharacterName });
+    send({
+      type: `CHARACTER_REQUEST_OPEN`,
+      character: character.id as CharacterName,
+    });
 
     if (
       !character.guard
@@ -86,7 +91,7 @@ function Home() {
       const value = formData.get(inputName) as string;
 
       send({
-        type: 'CHARACTER_REQUEST_SUBMIT',
+        type: "CHARACTER_REQUEST_SUBMIT",
         payload: value,
         character: data.id as CharacterName,
       });
@@ -108,7 +113,7 @@ function Home() {
           id={data.id}
           input={{ ...data.input, name: inputName }}
           portrait={data.img}
-          onClose={() => setSearchParams('')}
+          onClose={() => setSearchParams("")}
           onSubmit={handleSubmit}
         />
       </main>
@@ -134,11 +139,11 @@ function Home() {
              * We could use a css variable but it would require additional element wraping
              */
             enter={cn(
-              index === 0 && 'delay-[50ms]',
-              index === 1 && 'delay-[100ms]',
-              index === 2 && 'delay-[150ms]',
-              index === 3 && 'delay-[200ms]',
-              index === 4 && 'delay-[250ms]'
+              index === 0 && "delay-[50ms]",
+              index === 1 && "delay-[100ms]",
+              index === 2 && "delay-[150ms]",
+              index === 3 && "delay-[200ms]",
+              index === 4 && "delay-[250ms]"
             )}
             enterFrom="opacity-0 translate-y-4"
             enterTo="opacity-100 translate-y-0"
@@ -154,12 +159,16 @@ function Home() {
               role={character.role}
               contentButton={
                 <span className="flex items-center gap-2 text-white">
-                  <Icon icon={character.icon} height="unset" className="size-4 shrink-0" />
-                  {character.actionName || ''}
+                  <Icon
+                    icon={character.icon}
+                    height="unset"
+                    className="size-4 shrink-0"
+                  />
+                  {character.actionName || ""}
                 </span>
               }
               actionButton={trackCardAction(character)}
-              state={character.state || ''}
+              state={character.state || ""}
             />
           </Transition>
         ))}
@@ -171,7 +180,8 @@ function Home() {
           containerClassName="h-full"
           options={{
             loop: true,
-            startIndex: Number(localStorage.getItem(localStorageKeys.carouselIndex)) || 0,
+            startIndex:
+              Number(localStorage.getItem(localStorageKeys.carouselIndex)) || 0,
           }}
         >
           {snapshot.context.teamMembers.map((character, index) => (
@@ -187,12 +197,16 @@ function Home() {
                 role={character.role}
                 contentButton={
                   <span className="flex items-center gap-2 text-white">
-                    <Icon height="unset" icon={character.icon} className="size-4 shrink-0" />
-                    {character.actionName || ''}
+                    <Icon
+                      height="unset"
+                      icon={character.icon}
+                      className="size-4 shrink-0"
+                    />
+                    {character.actionName || ""}
                   </span>
                 }
                 actionButton={trackCardAction(character)}
-                state={character.state || ''}
+                state={character.state || ""}
               />
             </CarouselSlide>
           ))}

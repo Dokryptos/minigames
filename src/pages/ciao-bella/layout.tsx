@@ -1,36 +1,36 @@
-import * as React from 'react';
-import { Outlet } from 'react-router-dom';
-import Header from '@/components/header';
-import AcountMenu from './account-menu';
-import NavItem from '@/components/nav-item';
-import { Transition } from '@headlessui/react';
-import headerBanner from '@/assets/app-3/banner-min.jpeg?lqip';
-import background from '@/assets/app-3/background-min.jpg?lqip';
-import Image from '@/components/image';
-import GAME_DATA from '@/data/ciao-bella/game';
-import { PortalContext, usePortalContext } from '@/context/portal-context';
-import { createPortal } from 'react-dom';
-import Footer from './footer';
+import * as React from "react";
+import { Outlet } from "react-router-dom";
+import Header from "@/components/header";
+import AcountMenu from "./account-menu";
+import NavItem from "@/components/nav-item";
+import { Transition } from "@headlessui/react";
+// import headerBanner from '@/assets/app-3/banner-min.jpeg?lqip';
+// import background from '@/assets/app-3/background-min.jpg?lqip';
+import Image from "@/components/image";
+import GAME_DATA from "@/data/ciao-bella/game";
+import { PortalContext, usePortalContext } from "@/context/portal-context";
+import { createPortal } from "react-dom";
+import Footer from "./footer";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <>
-        <Image
+        {/* <Image
           className="fixed left-0 top-0 -z-10 size-full opacity-70"
           src={background.src}
           alt="background"
           height={background.height}
           width={background.width}
           lqip={background.lqip}
-        />
+        /> */}
 
         {/* <StartupDialogs /> */}
 
         <div className="mx-auto flex size-full min-h-[650px] max-w-screen-2xl flex-col gap-4 p-8 sm:h-screen">
-          <Header banner={headerBanner} title={GAME_DATA.name}>
+          {/* <Header banner={headerBanner} title={GAME_DATA.name}>
             <AcountMenu />
-          </Header>
+          </Header> */}
 
           <Transition
             appear
@@ -45,9 +45,17 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           >
             <div className="flex grow flex-col lg:h-0">
               <nav className="flex gap-2">
-                <NavItem icon="ph:users-three" title="Requêtes" link="/ciao-bella" />
+                <NavItem
+                  icon="ph:users-three"
+                  title="Requêtes"
+                  link="/ciao-bella"
+                />
 
-                <NavItem icon="ph:question" title="Demander de l'aide" link="/ciao-bella/help" />
+                <NavItem
+                  icon="ph:question"
+                  title="Demander de l'aide"
+                  link="/ciao-bella/help"
+                />
               </nav>
 
               <div className="flex-1 overflow-hidden rounded-r-lg rounded-bl-lg bg-zinc-800 shadow-md">

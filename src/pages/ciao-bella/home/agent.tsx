@@ -1,10 +1,9 @@
-import * as React from 'react';
-import { Icon } from '@iconify-icon/react';
-import AudioAutoplay from '@/components/audio-autoplay';
-import Image from '@/components/image';
-import Button from '@/components/button';
-import Input from '@/components/input';
-import { MachineContext } from '@/context/machine-context';
+import * as React from "react";
+import { Icon } from "@iconify-icon/react";
+import AudioAutoplay from "@/components/audio-autoplay";
+import Image from "@/components/image";
+import Button from "@/components/button";
+import Input from "@/components/input";
 
 const Path = () => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 132 45">
@@ -50,12 +49,9 @@ interface AgentProps {
 }
 
 const Agent = (props: AgentProps) => {
-  const { action, catchphrase, header, id, input, portrait, onClose, onSubmit } = props;
+  const { action, catchphrase, header, input, portrait, onClose, onSubmit } =
+    props;
   const { icon, title } = header;
-
-  const { snapshot } = React.useContext(MachineContext);
-
-  const errorMessage = snapshot.context.characters?.[id]?.error;
 
   const formRef = React.useRef<HTMLFormElement>(null);
 
@@ -74,11 +70,19 @@ const Agent = (props: AgentProps) => {
       </div>
 
       <div className="relative max-w-sm basis-1/3 max-sm:hidden sm:min-w-48">
-        <Image className="size-full object-cover" {...portrait} alt="agent portrait" />
+        <Image
+          className="size-full object-cover"
+          {...portrait}
+          alt="agent portrait"
+        />
 
         <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black/75 to-transparent px-4 pb-4 pt-8">
           <div className="font-din flex items-center gap-4">
-            <Icon icon={icon} height="unset" className="size-6 text-white opacity-50" />
+            <Icon
+              icon={icon}
+              height="unset"
+              className="size-6 text-white opacity-50"
+            />
             <span>{title}</span>
           </div>
         </div>
@@ -97,7 +101,11 @@ const Agent = (props: AgentProps) => {
 
         <div className="flex w-full flex-1 flex-col items-start gap-6 p-4 sm:p-8">
           <div className="font-din flex items-center gap-4 pr-12 sm:hidden">
-            <Icon icon={icon} height="unset" className="size-6 text-white opacity-50" />
+            <Icon
+              icon={icon}
+              height="unset"
+              className="size-6 text-white opacity-50"
+            />
             <span className="text-left max-sm:leading-5">{title}</span>
           </div>
 
@@ -119,13 +127,15 @@ const Agent = (props: AgentProps) => {
 
                 <Input
                   min="3"
-                  type={input.type || 'text'}
+                  type={input.type || "text"}
                   name={input.name}
                   placeholder={input.placeholder}
                 />
               </label>
 
-              {errorMessage && <div className="text-left text-red-500">{errorMessage}</div>}
+              {/* {errorMessage && (
+                <div className="text-left text-red-500">{errorMessage}</div>
+              )} */}
 
               <Button type="submit" className="mt-auto">
                 Valider

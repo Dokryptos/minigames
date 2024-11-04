@@ -1,0 +1,27 @@
+const FINGERPRINTS = [
+  { id: "eric-1", characterId: "eric" },
+  { id: "eric-2", characterId: "eric" },
+  { id: "eric-3", characterId: "eric" },
+  { id: "eric-4", characterId: "eric" },
+  { id: "philippe-1", characterId: "philippe" },
+  { id: "philippe-2", characterId: "philippe" },
+  { id: "unknown-1", characterId: "unknown" },
+  { id: "unknown-2", characterId: "unknown" },
+  { id: "unknown-3", characterId: "unknown" },
+  { id: "sophie-1", characterId: "sophie" },
+  { id: "sophie-2", characterId: "sophie" },
+  { id: "claudia", characterId: "claudia" },
+  { id: "tim", characterId: "tim" },
+  { id: "simon-1", characterId: "simon" },
+  { id: "simon-2", characterId: "simon" },
+  { id: "unknown-sacha-1", characterId: "unknown" },
+  { id: "false-sacha-1", characterId: "unknown" },
+  { id: "false-sacha-2", characterId: "unknown" },
+  { id: "unknown-sacha-2", characterId: "unknown" },
+  { id: "unknown-fingerprint", characterId: "unknown" },
+  { id: "fingerprint-a", characterId: "unknown" },
+  { id: "fingerprint-b", characterId: "unknown" },
+  { id: "fingerprint-c", characterId: "unknown" },
+];
+
+export default FINGERPRINTS;
